@@ -9,6 +9,10 @@ Vagrant.configure(2) do |config|
   end
   config.vm.define "centos7" do |centos7|
     centos7.vm.box = "jhcook/centos7"
+    centos7.vm.provider "virtualbox" do |v|
+      v.customize ["modifyvm", :id, "--usb", "off"]
+      v.customize ["modifyvm", :id, "--usbehci", "ofF"]
+    end
   end
   config.vm.define "ubuntu1404" do |ubuntu1404|
     ubuntu1404.vm.box = "ubuntu/trusty64"
