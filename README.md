@@ -34,3 +34,4 @@ TODO
 ====
 
 * Add VMs with various SCM systems (Chef, Puppet, etc) pre-installed
+* Test suite of some sort
