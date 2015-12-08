@@ -27,7 +27,9 @@ VM descriptions
 ===============
 
 centos6 - Base CentOS 6.7 OS
+
 centos7 - Base CentOS 7 OS (USB 2.0 disabled)
+
 ubuntu1404 - Base Ubuntu 14.04 OS
 
 TODO
