@@ -26,6 +26,8 @@ $ vagrant ssh centos7
 VM descriptions
 ===============
 
+centos65 - CentOS 6.5 OS + Puppet + Chef
+
 centos6 - Base CentOS 6.7 OS
 
 centos7 - Base CentOS 7 OS (USB 2.0 disabled)

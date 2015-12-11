@@ -7,6 +7,9 @@ Vagrant.configure(2) do |config|
   config.vm.define "centos6" do |centos6|
     centos6.vm.box = "webopninjas/centos-6.7"
   end
+  config.vm.define "centos65" do |centos65|
+    centos65.vm.box = "nrel/CentOS-6.5-x86_64"
+  end
   config.vm.define "centos7" do |centos7|
     centos7.vm.box = "jhcook/centos7"
     centos7.vm.provider "virtualbox" do |v|
