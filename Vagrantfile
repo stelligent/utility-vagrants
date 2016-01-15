@@ -4,6 +4,9 @@
 Vagrant.configure(2) do |config|
 
   config.vm.synced_folder "#{ENV['HOME']}", "/vagrant_data"
+  config.vm.define "centos5" do |centos5|
+    centos5.vm.box = "mramiro/centos5"
+  end
   config.vm.define "centos6" do |centos6|
     centos6.vm.box = "webopninjas/centos-6.7"
   end
