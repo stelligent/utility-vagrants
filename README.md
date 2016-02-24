@@ -32,7 +32,11 @@ centos6 - Base CentOS 6.7 OS
 
 centos7 - Base CentOS 7 OS (USB 2.0 disabled)
 
+debian8 - Base Debian 8
+
 ubuntu1404 - Base Ubuntu 14.04 OS
+
+ubuntu1504 - Base Ubuntu 15.04 OS
 
 TODO
 ====
