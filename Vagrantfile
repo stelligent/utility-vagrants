@@ -20,6 +20,9 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--usbehci", "ofF"]
     end
   end
+  config.vm.define "debian8" do |debian8|
+    debian8.vm.box = "debian/jessie64"
+  end
   config.vm.define "ubuntu1404" do |ubuntu1404|
     ubuntu1404.vm.box = "ubuntu/trusty64"
   end
