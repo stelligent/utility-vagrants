@@ -38,6 +38,8 @@ ubuntu1404 - Base Ubuntu 14.04 OS
 
 ubuntu1504 - Base Ubuntu 15.04 OS
 
+ubuntu1604 - Base Ubuntu 16.04 OS
+
 TODO
 ====
 
