@@ -2,35 +2,34 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-
-  config.vm.synced_folder "#{ENV['HOME']}", "/vagrant_data"
-  config.vm.define "centos5" do |centos5|
-    centos5.vm.box = "mramiro/centos5"
+  config.vm.synced_folder (ENV['HOME']).to_s, '/vagrant_data'
+  config.vm.define 'centos5' do |centos5|
+    centos5.vm.box = 'mramiro/centos5'
   end
-  config.vm.define "centos6" do |centos6|
-    centos6.vm.box = "webopninjas/centos-6.7"
+  config.vm.define 'centos6' do |centos6|
+    centos6.vm.box = 'webopninjas/centos-6.7'
   end
-  config.vm.define "centos65" do |centos65|
-    centos65.vm.box = "nrel/CentOS-6.5-x86_64"
+  config.vm.define 'centos65' do |centos65|
+    centos65.vm.box = 'nrel/CentOS-6.5-x86_64'
   end
-  config.vm.define "centos7" do |centos7|
-    centos7.vm.box = "jhcook/centos7"
-    centos7.vm.provider "virtualbox" do |v|
-      v.customize ["modifyvm", :id, "--usb", "off"]
-      v.customize ["modifyvm", :id, "--usbehci", "ofF"]
+  config.vm.define 'centos7' do |centos7|
+    centos7.vm.box = 'jhcook/centos7'
+    centos7.vm.provider 'virtualbox' do |v|
+      v.customize ['modifyvm', :id, '--usb', 'off']
+      v.customize ['modifyvm', :id, '--usbehci', 'ofF']
     end
   end
-  config.vm.define "debian8" do |debian8|
-    debian8.vm.box = "debian/jessie64"
+  config.vm.define 'debian8' do |debian8|
+    debian8.vm.box = 'debian/jessie64'
   end
-  config.vm.define "ubuntu1404" do |ubuntu1404|
-    ubuntu1404.vm.box = "ubuntu/trusty64"
+  config.vm.define 'ubuntu1404' do |ubuntu1404|
+    ubuntu1404.vm.box = 'ubuntu/trusty64'
   end
-  config.vm.define "ubuntu1504" do |ubuntu1504|
-    ubuntu1504.vm.box = "ubuntu/vivid64"
+  config.vm.define 'ubuntu1504' do |ubuntu1504|
+    ubuntu1504.vm.box = 'ubuntu/vivid64'
   end
-  config.vm.define "ubuntu1604" do |ubuntu1604|
-    ubuntu1604.vm.box = "ubuntu/xenial64"
+  config.vm.define 'ubuntu1604' do |ubuntu1604|
+    ubuntu1604.vm.box = 'ubuntu/xenial64'
   end
 
   # Create a forwarded port mapping which allows access to a specific port
