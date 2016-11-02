@@ -25,6 +25,10 @@ Vagrant.configure(2) do |config|
   config.vm.define 'ubuntu1404' do |ubuntu1404|
     ubuntu1404.vm.box = 'ubuntu/trusty64'
   end
+  config.vm.define 'ubuntu1404_puppet' do |ubuntu1404|
+    ubuntu1404.vm.box = 'ubuntu/trusty64'
+    ubuntu1404.vm.provision 'puppet'
+  end
   config.vm.define 'ubuntu1504' do |ubuntu1504|
     ubuntu1504.vm.box = 'ubuntu/vivid64'
   end
