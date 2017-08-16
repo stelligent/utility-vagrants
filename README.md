@@ -11,17 +11,15 @@ for VirtualBox) (https://www.virtualbox.org/wiki/Downloads )
 
 Install Vagrant for your operating system (https://www.vagrantup.com/downloads.html )
 
-To get a list of defined VMs:
+To get a list of defined VMs: `$ vagrant status`
 
-$ vagrant status
+To start a particular VM: `$ vagrant up centos7`
 
-To start a particular VM:
+To connect to a particular VM:
+`$ vagrant ssh centos7`
 
-$ vagrant up centos7
+>NOTE: for windows, recommend RDP: `$ vagrant rdp winserv2012std`
 
-To connect to a particular VM
-
-$ vagrant ssh centos7
 
 VM descriptions
 ===============
@@ -39,6 +37,8 @@ ubuntu1404 - Base Ubuntu 14.04 OS
 ubuntu1504 - Base Ubuntu 15.04 OS
 
 ubuntu1604 - Base Ubuntu 16.04 OS
+
+winserv2012std - Windows Server 2k12 R2, Standard Edition
 
 TODO
 ====
