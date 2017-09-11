@@ -18,7 +18,7 @@ To start a particular VM: `$ vagrant up centos7`
 To connect to a particular VM:
 `$ vagrant ssh centos7`
 
->NOTE: for windows, recommend RDP: `$ vagrant rdp winserv2012std`
+>NOTE: for Windows, recommend RDP: `$ vagrant rdp winserv2012std`
 
 
 VM descriptions
@@ -39,6 +39,10 @@ ubuntu1504 - Base Ubuntu 15.04 OS
 ubuntu1604 - Base Ubuntu 16.04 OS
 
 winserv2012std - Windows Server 2k12 R2, Standard Edition
+
+winserv2016eval - Windows Server 2k16 Standard Evaluation
+
+>NOTE: winserv2016eval given 2GB memory b/c Docker installed with two images: `microsoft/windowsservercore` & `microsoft/nanoserver`
 
 TODO
 ====
