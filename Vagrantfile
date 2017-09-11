@@ -38,17 +38,35 @@ Vagrant.configure(2) do |config|
   config.vm.define 'ubuntu1604' do |ubuntu1604|
     ubuntu1604.vm.box = 'ubuntu/xenial64'
   end
-  config.vm.define 'winserv2012std' do |winserv2012std|
-    winserv2012std.vm.box = 'devopsgroup-io/windows_server-2012r2-standard-amd64-nocm'
-    winserv2012std.vm.communicator = 'winrm'
-    winserv2012std.vm.guest = :windows
-    winserv2012std.vm.network :forwarded_port, guest: 3389, host: 3389
-    winserv2012std.vm.network :forwarded_port, guest: 5985, host: 5985, id: 'winrm', auto_correct: true
-    winserv2012std.vm.network :forwarded_port, guest: 22, host: 2222, id: 'ssh', auto_correct: true
-    # winserv2012std.vm.provider :virtualbox do |vb|
-    #   vb.customize ['modifyvm', :id, '--memory', 2048]
-    # end
+  config.vm.define 'winserv2012std' do |win12|
+    win12.vm.box = 'devopsgroup-io/windows_server-2012r2-standard-amd64-nocm'
+    win12.vm.communicator = 'winrm'
+    win12.vm.guest = :windows
+    win12.vm.network :forwarded_port, guest: 3389, host: 3389
+    win12.vm.network :forwarded_port, guest: 5985, host: 5985, id: 'winrm', auto_correct: true
+    win12.vm.network :forwarded_port, guest: 22, host: 2222, id: 'ssh', auto_correct: true
+    win12.vm.provider :virtualbox do |vb|
+      vb.customize ['modifyvm', :id, '--memory', 1024]
+    end
     config.vm.synced_folder (ENV['HOME']).to_s, '/vagrant_data', disabled: true
+    # Vagrant can't synch to/with a pre-existing guest folder; add 'home' folders as needed
+    %w(.aws .ssh).each do |fld|
+      config.vm.synced_folder ((ENV['HOME']).to_s + '/' + fld), "/Users/vagrant/#{fld}"
+    end
+  end
+  config.vm.define 'winserv2016eval' do |win16|
+    win16.vm.box = 'StefanScherer/windows_2016_docker'
+    win16.vm.communicator = 'winrm'
+    win16.vm.guest = :windows
+    win16.vm.network :forwarded_port, guest: 5985, host: 5985, id: 'winrm', auto_correct: true
+    win16.vm.network :forwarded_port, guest: 22, host: 2222, id: 'ssh', auto_correct: true
+    win16.vm.provider :virtualbox do |vb|
+      vb.customize ['modifyvm', :id, '--memory', 2048]
+    end
+    config.vm.synced_folder (ENV['HOME']).to_s, '/vagrant_data', disabled: true
+    %w(.aws .ssh).each do |fld|
+      config.vm.synced_folder ((ENV['HOME']).to_s + '/' + fld), "/Users/vagrant/#{fld}"
+    end
   end
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
