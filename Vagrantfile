@@ -38,6 +38,12 @@ Vagrant.configure(2) do |config|
   config.vm.define 'ubuntu1604' do |ubuntu1604|
     ubuntu1604.vm.box = 'ubuntu/xenial64'
   end
+  config.vm.define 'ubuntu1604dev' do |ubu|
+    ubu.vm.box = 'box-cutter/ubuntu1604-desktop'
+    %w(fixgnome atom vscode).each do |script|
+      config.vm.provision 'shell', path: "./scripts/ubuntu1604dev.#{script}.sh"
+    end
+  end
   config.vm.define 'winserv2012std' do |win12|
     win12.vm.box = 'devopsgroup-io/windows_server-2012r2-standard-amd64-nocm'
     win12.vm.communicator = 'winrm'
