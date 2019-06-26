@@ -25,6 +25,9 @@ Vagrant.configure(2) do |config|
   config.vm.define 'debian8' do |debian8|
     debian8.vm.box = 'debian/jessie64'
   end
+  config.vm.define 'debian9' do |debian9|
+    debian9.vm.box = 'debian/stretch64'
+  end
   config.vm.define 'ubuntu1404' do |ubuntu1404|
     ubuntu1404.vm.box = 'ubuntu/trusty64'
   end
