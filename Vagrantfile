@@ -7,7 +7,7 @@ Vagrant.configure(2) do |config|
     centos5.vm.box = 'mramiro/centos5'
   end
   config.vm.define 'centos6' do |centos6|
-    centos6.vm.box = 'bento/centos-6.9'
+    centos6.vm.box = 'centos/6'
   end
   config.vm.define 'centos65' do |centos65|
     centos65.vm.box = 'nrel/CentOS-6.5-x86_64'
@@ -16,11 +16,10 @@ Vagrant.configure(2) do |config|
     centos6.vm.box = 'webopninjas/centos-6.7'
   end
   config.vm.define 'centos7' do |centos7|
-    centos7.vm.box = 'jhcook/centos7'
-    centos7.vm.provider 'virtualbox' do |v|
-      v.customize ['modifyvm', :id, '--usb', 'off']
-      v.customize ['modifyvm', :id, '--usbehci', 'ofF']
-    end
+    centos7.vm.box = 'centos/7'
+  end
+  config.vm.define 'centos8' do |centos8|
+    centos8.vm.box = 'centos/8'
   end
   config.vm.define 'debian8' do |debian8|
     debian8.vm.box = 'debian/jessie64'

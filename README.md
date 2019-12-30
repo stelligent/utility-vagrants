@@ -28,7 +28,9 @@ centos65 - CentOS 6.5 OS + Puppet + Chef
 
 centos6 - Base CentOS 6.7 OS
 
-centos7 - Base CentOS 7 OS (USB 2.0 disabled)
+centos7 - Base CentOS 7 OS
+
+centos8 - Base CentOS 8 OS
 
 debian8 - Base Debian 8 (Jessie)
 
