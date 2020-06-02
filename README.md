@@ -44,6 +44,8 @@ ubuntu1604 - Base Ubuntu 16.04 OS
 
 ubuntu1604dev - Ubuntu 16.04 OS with Gnome desktop + Atom/VSCode IDEs + Git
 
+ubuntu1804 - Base Ubuntu 18.04 OS
+
 winserv2012std - Windows Server 2k12 R2 Standard Edition
 
 winserv2016eval - Windows Server 2k16 Standard Evaluation
