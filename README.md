@@ -24,6 +24,8 @@ To connect to a particular VM:
 VM descriptions
 ===============
 
+amazonlinux-2 - Base Amazon Linux 2
+
 centos65 - CentOS 6.5 OS + Puppet + Chef
 
 centos6 - Base CentOS 6.7 OS

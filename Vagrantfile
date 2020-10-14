@@ -3,6 +3,9 @@
 
 Vagrant.configure(2) do |config|
   config.vm.synced_folder (ENV['HOME']).to_s, '/vagrant_data'
+  config.vm.define 'amazonlinux-2' do |al2|
+    al2.vm.box = 'bento/amazonlinux-2'
+  end
   config.vm.define 'centos5' do |centos5|
     centos5.vm.box = 'mramiro/centos5'
   end
