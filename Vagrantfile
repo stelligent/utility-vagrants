@@ -43,7 +43,7 @@ Vagrant.configure(2) do |config|
   config.vm.define 'ubuntu1604dev' do |ubu|
     ubu.vm.box = 'box-cutter/ubuntu1604-desktop'
     %w(fixgnome atom vscode).each do |script|
-      config.vm.provision 'shell', path: "./scripts/ubuntu1604dev.#{script}.sh"
+      ubu.vm.provision 'shell', path: "./scripts/ubuntu1604dev.#{script}.sh"
     end
   end
   config.vm.define 'ubuntu1804' do |ubuntu1804|
